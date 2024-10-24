@@ -46,6 +46,10 @@ const ROCK = 'rock';
 const PAPER = 'paper';
 const SCISSORS = 'scissors'
 
+// SCORE TABLE (STARTING POINT)
+let humanScore = 0;
+let computerScore = 0; 
+
 
 
 // GET THE HUMAN CHOICE
@@ -82,3 +86,5 @@ function getComputerChoice() {
   }
 // Check if getComputerChoice works:
 // alert(`Computer chose ${getComputerChoice()}`);
+
+
