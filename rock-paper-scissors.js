@@ -41,8 +41,10 @@
 
 
 
-
-
+// OUTPUT OPTIONS
+const ROCK = 'rock';
+const PAPER = 'paper';
+const SCISSORS = 'scissors'
 
 // GET THE HUMAN CHOISE
 function getHumanChoise () {
@@ -57,7 +59,7 @@ function getHumanChoise () {
 	} else {
 		return('something unknown');
 	}
-
 }
 
-alert(`Human chose ${getHumanChoise()}`);
+// Check if getHumanChoise works:
+// alert(`Human chose ${getHumanChoise()}`);
