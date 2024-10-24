@@ -40,17 +40,12 @@
 // THE GAME STARTS AGAIN
 
 
-
-// OUTPUT OPTIONS
 const ROCK = 'rock 🗿';
 const PAPER = 'paper 🧻';
 const SCISSORS = 'scissors ✂️'
 
-// SCORE TABLE (STARTING POINT)
 let humanScore = 0;
 let computerScore = 0; 
-
-
 
 // GET THE HUMAN CHOICE
 function getHumanChoice () {
@@ -90,15 +85,9 @@ function getComputerChoice() {
 
 
 
-// SINGLE ROUND
-// 		takes the human and computer player choices as arguments
-// 		plays a single round
-// 		increments the round winner’s score
-// 		and logs a winner announcement.
-
-
 // The outcpme is two words (rock/paper/scissors)
 function playRound (humanChoice, computerChoice) {
+
 	alert(`In this round Human goes with ${humanSelection}\nand the Computer goes with ${computerSelection}. \n\nSoooooooo`);
 
 	if (humanChoice === undefined) {
@@ -121,8 +110,16 @@ function playRound (humanChoice, computerChoice) {
 	alert(`Score board \n\nYou: ${humanScore}\nPiece of hardware: ${computerScore}`)
 }
 
+
+// THE GAME
+function playGame () {
+	// The outcpme is a word (rock/paper/scissors)
+	playRound(humanSelection, computerSelection);
+	playRound(humanSelection, computerSelection);
+}
+
 // The outcpme is a word (rock/paper/scissors)
 const humanSelection = getHumanChoice(); 
 const computerSelection = getComputerChoice();
 
-playRound (humanSelection, computerSelection);
+playGame();
