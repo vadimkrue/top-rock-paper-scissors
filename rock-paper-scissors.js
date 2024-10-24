@@ -42,9 +42,9 @@
 
 
 // OUTPUT OPTIONS
-const ROCK = 'rock';
-const PAPER = 'paper';
-const SCISSORS = 'scissors'
+const ROCK = 'rock 🗿';
+const PAPER = 'paper 🧻';
+const SCISSORS = 'scissors ✂️'
 
 // SCORE TABLE (STARTING POINT)
 let humanScore = 0;
@@ -54,37 +54,47 @@ let computerScore = 0;
 
 // GET THE HUMAN CHOICE
 function getHumanChoise () {
-	let humanChoise = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
+	let result = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
 	
-	if (humanChoise === 'r' || humanChoise === 'rock' || humanChoise === 'Rock') {
+	if (result === 'r' || result === 'rock' || result === 'Rock') {
 		return(ROCK);
-	} else if (humanChoise === 'p' || humanChoise === 'paper' || humanChoise === 'Paper') {
+	} else if (result === 'p' || result === 'paper' || result === 'Paper') {
 		return(PAPER);
-	} else if (humanChoise === 's' || humanChoise === 'scissors' || humanChoise === 'Scissors') {
+	} else if (result === 's' || result === 'scissors' || result === 'Scissors') {
 		return(SCISSORS);
 	} else {
 		return('something unknown');
 	}
 }
 // Check if getHumanChoise works:
-// alert(`Human chose ${getHumanChoise()}`);
+alert(`Human chose ${getHumanChoise()}`);
 
 
 
 // GET THE COMPUTER CHOICE
 function getComputerChoice() {
-	let computerChoice = Math.random();
-	alert(computerChoice);
+	let result = Math.random();
+	alert(result);
   
-	if (computerChoice <= 0.33) {
+	if (result <= 0.33) {
 	  return(ROCK);
-	} else if (computerChoice <= 0.66) {
+	} else if (result <= 0.66) {
 	  return(PAPER);
-	} else if (computerChoice <= 0.99) {
+	} else if (result <= 0.99) {
 	  return(SCISSORS);
 	}
   }
 // Check if getComputerChoice works:
-// alert(`Computer chose ${getComputerChoice()}`);
+alert(`Computer chose ${getComputerChoice()}`);
 
 
+
+// SINGLE ROUND
+// 		takes the human and computer player choices as arguments
+// 		plays a single round
+// 		increments the round winner’s score
+// 		and logs a winner announcement.
+
+function playRound (humanChoise, computerChoice) {
+
+}
