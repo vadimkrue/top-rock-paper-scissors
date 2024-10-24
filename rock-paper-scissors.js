@@ -51,11 +51,11 @@ function getHumanChoise () {
 	let humanChoise = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
 	
 	if (humanChoise === 'r' || humanChoise === 'rock' || humanChoise === 'Rock') {
-		return('rock');
+		return(ROCK);
 	} else if (humanChoise === 'p' || humanChoise === 'paper' || humanChoise === 'Paper') {
-		return('paper');
+		return(PAPER);
 	} else if (humanChoise === 's' || humanChoise === 'scissors' || humanChoise === 'Scissors') {
-		return('scissors');
+		return(SCISSORS);
 	} else {
 		return('something unknown');
 	}
