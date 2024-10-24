@@ -46,7 +46,9 @@ const ROCK = 'rock';
 const PAPER = 'paper';
 const SCISSORS = 'scissors'
 
-// GET THE HUMAN CHOISE
+
+
+// GET THE HUMAN CHOICE
 function getHumanChoise () {
 	let humanChoise = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
 	
@@ -60,6 +62,23 @@ function getHumanChoise () {
 		return('something unknown');
 	}
 }
-
 // Check if getHumanChoise works:
 // alert(`Human chose ${getHumanChoise()}`);
+
+
+
+// GET THE COMPUTER CHOICE
+function getComputerChoice() {
+	let computerChoice = Math.random();
+	alert(computerChoice);
+  
+	if (computerChoice <= 0.33) {
+	  return(ROCK);
+	} else if (computerChoice <= 0.66) {
+	  return(PAPER);
+	} else if (computerChoice <= 0.99) {
+	  return(SCISSORS);
+	}
+  }
+// Check if getComputerChoice works:
+// alert(`Computer chose ${getComputerChoice()}`);
