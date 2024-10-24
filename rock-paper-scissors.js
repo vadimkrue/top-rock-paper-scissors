@@ -53,28 +53,29 @@ let computerScore = 0;
 
 
 // GET THE HUMAN CHOICE
-function getHumanChoise () {
-	let result = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
-	
-	if (result === 'r' || result === 'rock' || result === 'Rock') {
+function getHumanChoice () {
+	let input = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
+
+	let result = input.toLowerCase();
+
+	if (result === 'r' || result === 'rock') {
 		return(ROCK);
-	} else if (result === 'p' || result === 'paper' || result === 'Paper') {
+	} else if (result === 'p' || result === 'paper') {
 		return(PAPER);
-	} else if (result === 's' || result === 'scissors' || result === 'Scissors') {
+	} else if (result === 's' || result === 'scissors') {
 		return(SCISSORS);
 	} else {
-		return('something unknown');
+		return;
 	}
 }
 // Check if getHumanChoise works:
-alert(`Human chose ${getHumanChoise()}`);
+// alert(`Human chose ${getHumanChoice()}`);
 
 
 
 // GET THE COMPUTER CHOICE
 function getComputerChoice() {
 	let result = Math.random();
-	alert(result);
   
 	if (result <= 0.33) {
 	  return(ROCK);
@@ -85,7 +86,7 @@ function getComputerChoice() {
 	}
   }
 // Check if getComputerChoice works:
-alert(`Computer chose ${getComputerChoice()}`);
+// alert(`Computer chose ${getComputerChoice()}`);
 
 
 
@@ -95,6 +96,33 @@ alert(`Computer chose ${getComputerChoice()}`);
 // 		increments the round winner’s score
 // 		and logs a winner announcement.
 
-function playRound (humanChoise, computerChoice) {
 
+// The outcpme is two words (rock/paper/scissors)
+function playRound (humanChoice, computerChoice) {
+	alert(`In this round Human goes with ${humanSelection}\nand the Computer goes with ${computerSelection}. \n\nSoooooooo`);
+
+	if (humanChoice === undefined) {
+		alert('You\'re not following the rules of the game, so it won\'t continue.');
+		return;
+	}
+
+	if ((humanChoice === ROCK && computerChoice == SCISSORS) 
+		|| (humanChoice === PAPER && computerChoice == ROCK)
+		|| (humanChoice === SCISSORS && computerChoice === PAPER)) {
+		humanScore += 1;
+		alert('You won this piece of hardware!')
+	} else if (humanChoice === computerChoice) {
+		alert('It\'s a tie')
+	} else {
+		computerScore += 1;
+		alert('Bad luck this time. You\'ve lost')
+	}
+
+	alert(`Score board \n\nYou: ${humanScore}\nPiece of hardware: ${computerScore}`)
 }
+
+// The outcpme is a word (rock/paper/scissors)
+const humanSelection = getHumanChoice(); 
+const computerSelection = getComputerChoice();
+
+playRound (humanSelection, computerSelection);
