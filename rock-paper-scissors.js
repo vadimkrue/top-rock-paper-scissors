@@ -38,3 +38,26 @@
 //      eather human win or loose or if it's a tie
 
 // THE GAME STARTS AGAIN
+
+
+
+
+
+
+// GET THE HUMAN CHOISE
+function getHumanChoise () {
+	let humanChoise = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
+	
+	if (humanChoise === 'r' || humanChoise === 'rock' || humanChoise === 'Rock') {
+		return('rock');
+	} else if (humanChoise === 'p' || humanChoise === 'paper' || humanChoise === 'Paper') {
+		return('paper');
+	} else if (humanChoise === 's' || humanChoise === 'scissors' || humanChoise === 'Scissors') {
+		return('scissors');
+	} else {
+		return('something unknown');
+	}
+
+}
+
+alert(`Human chose ${getHumanChoise()}`);
