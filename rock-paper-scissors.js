@@ -6,9 +6,7 @@ let humanScore = 0;
 let computerScore = 0; 
 
 function getHumanChoice () {
-	
 	let humanInput = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
-
 	let humanOutput = humanInput.toLowerCase();
 
 	if (humanOutput === 'r' || humanOutput === 'rock') {
@@ -24,21 +22,19 @@ function getHumanChoice () {
 }
 
 function getComputerChoice() {
-	
 	let  computerInput = Math.random();
 
 	if (computerInput <= 0.33) {
-	computerOutput = ROCK;
+		computerOutput = ROCK;
 	} else if (computerInput <= 0.66) {
-	computerOutput = PAPER;
+		computerOutput = PAPER;
 	} else if (computerInput <= 0.99) {
-	computerOutput = SCISSORS;
+		computerOutput = SCISSORS;
 	}
 	return(computerOutput);
   }
 
 function playRound () {
-	
 	let humanSelection = getHumanChoice();
 	let computerSelection = getComputerChoice();
 
@@ -59,8 +55,10 @@ function playRound () {
 function playGame () {
 	playRound();
 	console.log(`Round 1 \n\nHuman: ${humanScore} \nComputer: ${computerScore}`);
+	
 	playRound();
 	console.log(`Round 2 \n\nHuman: ${humanScore} \nComputer: ${computerScore}`);
+	
 	playRound();
 	console.log(`Round 3 \n\nHuman: ${humanScore} \nComputer: ${computerScore}`);
 
