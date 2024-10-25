@@ -15,7 +15,7 @@ function getHumanChoice () {
 	} else if (humanInput === 's' || humanInput === 'scissors') {
 		return(SCISSORS);
 	} else {
-		console.log('Что-то не понятное')
+		console.log('Unknown weapon. What is this?')
 		return undefined;
 	}
 }
@@ -36,6 +36,11 @@ function getComputerChoice() {
 function playRound () {
 	let humanSelection = getHumanChoice();
 	let computerSelection = getComputerChoice();
+
+	if (humanSelection === undefined) {
+		console.log('Computer won\'t beat this thing. Not a fair fight')
+		return;
+	}
 
 	console.log(`In this round human chose ${humanSelection} \ncomputer chose ${computerSelection}`);
 
