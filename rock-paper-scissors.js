@@ -6,6 +6,7 @@ let humanScore = 0;
 let computerScore = 0; 
 
 function getHumanChoice () {
+	
 	let humanInput = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
 
 	let humanOutput = humanInput.toLowerCase();
@@ -23,6 +24,7 @@ function getHumanChoice () {
 }
 
 function getComputerChoice() {
+	
 	let  computerInput = Math.random();
 
 	if (computerInput <= 0.33) {
@@ -36,29 +38,37 @@ function getComputerChoice() {
   }
 
 function playRound () {
+	
 	let humanSelection = getHumanChoice();
 	let computerSelection = getComputerChoice();
 
-	alert(`Human chose ${humanSelection} \nComputer chose ${computerSelection}`);
+	console.log(`In this round human chose ${humanSelection} \ncomputer chose ${computerSelection}`);
 
 	if ((humanSelection === ROCK && computerSelection === SCISSORS) 
 		|| (humanSelection === PAPER && computerSelection === ROCK)
 		|| (humanSelection === SCISSORS && computerSelection === PAPER)) {
 		humanScore += 1;
-		alert('round: You won this piece of hardware!');
-	
 	} else if (humanSelection === computerSelection) {
 		humanScore += 1;
 		computerScore += 1;
-		alert('round: It\'s a tie');
-	
 	} else {
 		computerScore += 1;
-		alert('round: Bad luck this time. You\'ve lost');
 	}
   }
 
-playRound();
-alert(`Human: ${humanScore} \nComputer: ${computerScore}`);
-playRound();
-alert(`Human: ${humanScore} \nComputer: ${computerScore}`);
+function playGame () {
+	playRound();
+	console.log(`Round 1 \n\nHuman: ${humanScore} \nComputer: ${computerScore}`);
+	playRound();
+	console.log(`Round 2 \n\nHuman: ${humanScore} \nComputer: ${computerScore}`);
+	playRound();
+	console.log(`Round 3 \n\nHuman: ${humanScore} \nComputer: ${computerScore}`);
+
+	let gameResult = (humanScore > computerScore) ? 'GAME: HUMAN WON' :
+		(humanScore < computerScore) ? 'GAME: COMPUTER WON' :
+		'GAME: IT\'S A TIE' ;
+	
+	console.log(gameResult);
+}
+
+playGame();
