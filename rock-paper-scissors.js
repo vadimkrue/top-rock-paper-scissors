@@ -6,14 +6,13 @@ let humanScore = 0;
 let computerScore = 0; 
 
 function getHumanChoice () {
-	let humanInput = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '');
-	let humanOutput = humanInput.toLowerCase();
+	let humanInput = prompt('Make a choice:\n\n— rock (type "r")\n— paper (type "p")\n— scissors (type "s")', '').toLowerCase();
 
-	if (humanOutput === 'r' || humanOutput === 'rock') {
+	if (humanInput === 'r' || humanInput === 'rock') {
 		return(ROCK);
-	} else if (humanOutput === 'p' || humanOutput === 'paper') {
+	} else if (humanInput === 'p' || humanInput === 'paper') {
 		return(PAPER);
-	} else if (humanOutput === 's' || humanOutput === 'scissors') {
+	} else if (humanInput === 's' || humanInput === 'scissors') {
 		return(SCISSORS);
 	} else {
 		console.log('Что-то не понятное')
